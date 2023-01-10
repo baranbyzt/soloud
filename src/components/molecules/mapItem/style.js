@@ -2,34 +2,35 @@ import styled from "styled-components";
 
 const MapItemContainer = styled.div`
   position: relative;
+  width: 80px;
+  height: 80px;
+  zindex: 9;
+  background-color: var(--colorPrimary);
+  border-radius: 40px;
+`;
+
+const MapItemBody = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 70px;
+  height: 40px;
   width: 100px;
-  height: 100px;
-  zindex: 9999;
+  background-color: var(--colorPrimary);
+  padding-left: 15px;
+  z-index: 10;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 `;
 
 const MapItemImage = styled.div`
   position: absolute;
-  top: 10px;
-  left: 10px;
-  height: 100px;
-  width: 100px;
+  left: 3px;
+  top: 3px;
+  height: 74px;
+  width: 74px;
   border-radius: 50px;
-  border: 1px solid red;
   overflow: hidden;
+  z-index: 11;
 `;
 
-const MapItemTitle = styled.div`
-  position: absolute;
-  top: 10px;
-  left: 70px;
-  height: 30px;
-`;
-
-const MapItemSubTitle = styled.div`
-  position: absolute;
-  top: 40px;
-  left: 70px;
-  height: 20px;
-`;
-
-export { MapItemContainer, MapItemImage, MapItemTitle, MapItemSubTitle };
+export { MapItemContainer, MapItemImage, MapItemBody };

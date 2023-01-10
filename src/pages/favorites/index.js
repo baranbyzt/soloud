@@ -15,12 +15,6 @@ const Favorites = () => {
 
   useEffect(() => {
     if (mediaData.length > 0) {
-      console.log(store.favorites);
-
-      mediaData.forEach((element) => {
-        console.log(element.id);
-      });
-
       const favoriteMedia = mediaData.filter((item) =>
         store.favorites.includes(item.id)
       );

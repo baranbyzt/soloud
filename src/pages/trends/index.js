@@ -89,7 +89,6 @@ const Trends = () => {
           <Text label="Top 10" color="textPrimary" size="lg" />
           {mediaData.map((item) => (
             <MediaItem
-              data={item}
               id={item.id}
               favorite={store.favorites.includes(item.id)}
               song={item.song}

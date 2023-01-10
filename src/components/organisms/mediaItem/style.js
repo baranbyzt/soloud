@@ -39,7 +39,6 @@ const MediaItemCounts = styled.div`
   height: 50px;
   display: flex;
   align-items: center;
-  border: 1px solid lime;
 `;
 
 const MediaItemButtons = styled.div`

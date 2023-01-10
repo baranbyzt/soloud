@@ -7,13 +7,16 @@ export function useStore() {
 }
 
 export function StoreProvider({ children }) {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(["16", "23", "32"]);
+  const [lastPlayed, setLastPlayed] = useState(["22", "09", "12"]);
 
   return (
     <StoreContext.Provider
       value={{
         favorites: favorites,
         setFavorites: setFavorites,
+        lastPlayed: lastPlayed,
+        setLastPlayed: setLastPlayed,
       }}
     >
       {children}

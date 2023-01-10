@@ -1,13 +1,15 @@
 import React from "react";
 import { ImageContainer } from "./style";
 
-const Image = ({ imageName, size, width, height }) => {
+const Image = ({ imageName, type, size, width, height }) => {
   return (
     <ImageContainer
       size={size}
       width={width}
       height={height}
-      url={require(`../../../assets/images/${imageName}.jpg`)}
+      url={require(`../../../assets/images/${imageName}.${
+        type ? type : "jpg"
+      }`)}
     />
   );
 };

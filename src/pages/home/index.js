@@ -1,25 +1,27 @@
 import React, { useState } from "react";
 import Menu from "../../components/organisms/menu";
+import Recent from "../../components/organisms/recent";
+
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../dashboard";
 import Detail from "../detail";
 import Favorites from "../favorites";
 import Trends from "../trends";
 import MusicMap from "../music-map";
-
+import Logo from "../../components/molecules/logo";
 import Grid from "../../components/atoms/grid";
 
 const menuData = [
   {
     id: "dashboard",
     label: "Dashboard",
-    icon: "AiOutlinePieChart",
+    icon: "FiMonitor",
     path: "/dashboard",
   },
   {
     id: "favorites",
     label: "Favorites",
-    icon: "AiOutlinePieChart",
+    icon: "AiOutlineHeart",
     path: "/favorites",
   },
   {
@@ -31,7 +33,7 @@ const menuData = [
   {
     id: "musicMap",
     label: "Music Map",
-    icon: "AiOutlinePieChart",
+    icon: "FiMapPin",
     path: "/music-map",
   },
 ];
@@ -40,14 +42,16 @@ const Home = () => {
   const [activeMenu, setActiveMenu] = useState(menuData[0].id);
 
   return (
-    <div style={{ backgroundColor: "#171929" }}>
+    <>
       <Grid direction="row">
         <Grid width="240px">
+          <Logo size="md" />
           <Menu
             data={menuData}
             activeMenu={activeMenu}
             setActiveMenu={setActiveMenu}
           />
+          <Recent />
         </Grid>
         <Grid>
           <Routes>
@@ -60,7 +64,7 @@ const Home = () => {
           </Routes>
         </Grid>
       </Grid>
-    </div>
+    </>
   );
 };
 

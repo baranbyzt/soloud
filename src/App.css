@@ -5,11 +5,11 @@ body {
 
 :root {
   --textPrimary: #ffffff;
-  --textSecondary: #afe6ff;
+  --textSecondary: #ddc8ff;
   --textWhite: #ffffff;
-  --activePrimary: #d41c6e;
+  --activePrimary: #a869e4;
 
   --colorPrimary: #000000;
-  --colorSecondary: #292c36;
+  --colorSecondary: #0c0c0e;
   --colorTertiary: #474a55;
 }

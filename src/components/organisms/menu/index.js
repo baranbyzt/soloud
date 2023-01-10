@@ -7,7 +7,7 @@ const Menu = ({ data, activeMenu, setActiveMenu }) => {
   return (
     <MenuContainer>
       {data.map((item, index) => (
-        <Link to={item.path}>
+        <Link to={item.path} style={{ textDecoration: "none" }}>
           <MenuItem
             key={index}
             id={item.id}

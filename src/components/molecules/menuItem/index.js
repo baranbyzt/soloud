@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuItemContainer } from "./style";
+import { MenuItemContainer, MenuItemIcon, MenuItemText } from "./style";
 
 import Text from "../../atoms/text";
 import Icon from "../../atoms/icon";
@@ -8,17 +8,21 @@ const MenuItem = ({ label, icon, isActive, onClick }) => {
   return (
     <MenuItemContainer isActive={isActive} onClick={onClick}>
       {icon && (
-        <Icon
-          data={icon}
-          size="sm"
-          color={isActive ? "textWhite" : "textPrimary"}
-        />
+        <MenuItemIcon>
+          <Icon
+            data={icon}
+            size="sm"
+            color={isActive ? "textWhite" : "textPrimary"}
+          />
+        </MenuItemIcon>
       )}
-      <Text
-        label={label}
-        color={isActive ? "textWhite" : "textPrimary"}
-        size="md"
-      />
+      <MenuItemText>
+        <Text
+          label={label}
+          color={isActive ? "textWhite" : "textPrimary"}
+          size="md"
+        />
+      </MenuItemText>
     </MenuItemContainer>
   );
 };
