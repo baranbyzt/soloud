@@ -4,9 +4,11 @@ const MediaBoxContainer = styled.div`
   border: 1px solid var(--colorTertiary);
   width: fit-content;
   padding: 10px;
-  margin: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
   transition: 0.5s;
   border-radius: 10px;
+  float: left;
 `;
 
 const MediaBoxImage = styled.div`

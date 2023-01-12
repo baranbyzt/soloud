@@ -1,8 +1,8 @@
 import React from "react";
 import { SpaceContainer } from "./style";
 
-const SpaceContainer = ({ height, width }) => {
-  return <Space height={height} width={width} />;
+const Space = ({ height, width }) => {
+  return <SpaceContainer height={height} width={width} />;
 };
 
-export default SpaceContainer;
+export default Space;

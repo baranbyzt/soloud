@@ -1,7 +1,7 @@
 import React from "react";
 import { IconContainer } from "./style";
 
-import { AiOutlinePieChart, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlinePieChart, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiPlay, FiUser, FiMonitor, FiMapPin } from "react-icons/fi";
 
 const icons = {
@@ -10,6 +10,9 @@ const icons = {
   },
   AiOutlineHeart: (size) => {
     return <AiOutlineHeart size={size} />;
+  },
+  AiFillHeart: (size) => {
+    return <AiFillHeart size={size} />;
   },
   FiPlay: (size) => {
     return <FiPlay size={size} />;

@@ -48,7 +48,7 @@ const MediaBox = ({ id, song, artist, favorite }) => {
         />
         <Button
           size="xs"
-          icon="AiOutlineHeart"
+          icon={favorite ? "AiFillHeart" : "AiOutlineHeart"}
           iconColor={favorite ? "activePrimary" : "textPrimary"}
           onClick={() => toggleFavorite(id)}
         />

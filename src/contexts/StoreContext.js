@@ -7,7 +7,7 @@ export function useStore() {
 }
 
 export function StoreProvider({ children }) {
-  const [favorites, setFavorites] = useState(["16", "23", "32"]);
+  const [favorites, setFavorites] = useState(["02", "05", "32"]);
   const [lastPlayed, setLastPlayed] = useState(["22", "09", "12"]);
 
   return (

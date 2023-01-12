@@ -3,6 +3,7 @@ import PageLayout from "../../components/templates/pageLayout";
 import Grid from "../../components/atoms/grid";
 import { useStore } from "../../contexts/StoreContext";
 import MediaBox from "../../components/organisms/mediaBox";
+import Text from "../../components/atoms/text";
 
 const Favorites = () => {
   const store = useStore();
@@ -32,16 +33,21 @@ const Favorites = () => {
 
   return (
     <PageLayout>
-      <Grid direction="row" padding="20px" wrap>
-        {favorites.length &&
-          favorites.map((item) => (
-            <MediaBox
-              id={item.id}
-              favorite={store.favorites.includes(item.id)}
-              song={item.song}
-              artist={item.artist}
-            />
-          ))}
+      <Grid direction="row" padding="30px" wrap>
+        <Grid sm={24} md={24} lg={24}>
+          <Text label="Favorites" color="textPrimary" size="lg" />
+        </Grid>
+        <Grid>
+          {favorites.length &&
+            favorites.map((item) => (
+              <MediaBox
+                id={item.id}
+                favorite={store.favorites.includes(item.id)}
+                song={item.song}
+                artist={item.artist}
+              />
+            ))}
+        </Grid>
       </Grid>
     </PageLayout>
   );

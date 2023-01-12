@@ -7,7 +7,7 @@ const GridContainer = styled.div`
       ? props.display
       : props.direction === "row"
       ? "flex"
-      : "unset"};
+      : "block"};
   width: ${(props) =>
     props.padding ? "unset" : props.width ? props.width : "100%"};
   min-width: ${(props) => (props.width ? props.width : "unset")};

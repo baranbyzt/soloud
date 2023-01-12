@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PageLayout from "../../components/templates/pageLayout";
 import Video from "../../components/atoms/video";
 import Text from "../../components/atoms/text";
+import Space from "../../components/atoms/space";
 import Grid from "../../components/atoms/grid";
 import { useLocation } from "react-router-dom";
 
@@ -25,15 +26,18 @@ const Detail = () => {
 
   return (
     <PageLayout>
-      <Grid direction="row" padding="20px">
-        <Grid>
-          <Text label={detailData?.artist} size="lg" color="textPrimary" />
-          <Text label={detailData?.song} size="md" color="textSecondary" />
+      <Grid padding="30px">
+        <Grid direction="row">
+          <Grid>
+            <Text label={detailData?.artist} size="lg" color="textPrimary" />
+            <Text label={detailData?.song} height={20} color="textSecondary" />
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid direction="row" padding="20px">
-        <Grid>
-          <Video id={detailData?.mediaId} />
+        <Space height="30px" />
+        <Grid direction="row">
+          <Grid>
+            <Video id={detailData?.mediaId} />
+          </Grid>
         </Grid>
       </Grid>
     </PageLayout>

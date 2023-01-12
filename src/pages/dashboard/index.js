@@ -48,30 +48,27 @@ const Dashboard = () => {
 
   return (
     <PageLayout>
-      {/* <Button size="xs" icon="AiOutlinePieChart" />
-      <Button label="Click" size="sm" />
-      <Button label="Click" size="md" icon="AiOutlinePieChart" />
-      <Button label="Click" size="lg" icon="AiOutlinePieChart" />
-     */}
-      <Grid display="block" padding="10px 20px 0 20px">
-        <Tabs
-          data={tabsData}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-      </Grid>
-      <Grid direction="row" padding="20px" wrap spaceBetween>
-        {mediaData
-          .filter((item) => item.type === activeTab)
-          .map((item) => (
-            <MediaBox
-              data={item}
-              id={item.id}
-              favorite={store.favorites.includes(item.id)}
-              song={item.song}
-              artist={item.artist}
-            />
-          ))}
+      <Grid padding="30px" wrap>
+        <Grid>
+          <Tabs
+            data={tabsData}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        </Grid>
+        <Grid>
+          {mediaData
+            .filter((item) => item.type === activeTab)
+            .map((item) => (
+              <MediaBox
+                data={item}
+                id={item.id}
+                favorite={store.favorites.includes(item.id)}
+                song={item.song}
+                artist={item.artist}
+              />
+            ))}
+        </Grid>
       </Grid>
     </PageLayout>
   );
