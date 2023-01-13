@@ -7,72 +7,59 @@ import { fromLonLat } from "ol/proj";
 const mapItems = [
   {
     id: 1,
-    label: "Item01",
-    imageCode: "media01",
-    pos: [10.372, 48.215],
+    name: "April Oneal",
+    imageCode: "portrait01",
+    song: "Cooped Up",
+    pos: [10.37, 48.21],
   },
   {
     id: 2,
-    label: "Item02",
-    imageCode: "media02",
-    pos: [1.101, 23.208],
+    name: "Amy White",
+    imageCode: "portrait02",
+    song: "La Sonora Dinamita",
+    pos: [15.37, 50.18],
   },
   {
     id: 3,
-    label: "Item03",
-    imageCode: "media03",
-    pos: [26.881, -10.208],
+    name: "Bengi Yılmaz",
+    imageCode: "portrait03",
+    song: "Anti-Hero",
+    pos: [2.31, 47.21],
   },
   {
     id: 4,
-    label: "Item04",
-    imageCode: "media04",
-    pos: [-75.372, 40.215],
+    name: "Patrick Luc",
+    imageCode: "portrait04",
+    song: "Bring Me The Horizon",
+    pos: [23.37, 44.21],
   },
   {
     id: 5,
-    label: "Item05",
-    imageCode: "media05",
-    pos: [-70.101, -10.208],
+    name: "Jürgen Klaus",
+    imageCode: "portrait05",
+    song: "I Ain’t Worried",
+    pos: [6.32, 44.53],
   },
   {
     id: 6,
-    label: "Item06",
-    imageCode: "media06",
-    pos: [26.88, -10.208],
-  },
-  {
-    id: 7,
-    label: "Item07",
-    imageCode: "media07",
-    pos: [120.372, -20.215],
-  },
-  {
-    id: 8,
-    label: "Item08",
-    imageCode: "media08",
-    pos: [80.101, 60.208],
-  },
-  {
-    id: 9,
-    label: "Item09",
-    imageCode: "media09",
-    pos: [96.88, 10.208],
-  },
-  {
-    id: 10,
-    label: "Item10",
-    imageCode: "media10",
-    pos: [-15.818, 70.208],
+    name: "Raphaël Luis",
+    imageCode: "portrait06",
+    song: "These Are The Ways",
+    pos: [15.37, 47.2],
   },
 ];
 
 const MusicMap = () => {
   return (
     <PageLayout>
-      <Map center={fromLonLat([30, 30])} zoom={2} data={mapItems}></Map>
+      <Map center={fromLonLat([14.03, 47.01])} zoom={6} data={mapItems}></Map>
       {mapItems.map((item) => (
-        <MapItem id={item.id} label={item.label} imageCode={item.imageCode} />
+        <MapItem
+          id={item.id}
+          name={item.name}
+          song={item.song}
+          imageCode={item.imageCode}
+        />
       ))}
     </PageLayout>
   );

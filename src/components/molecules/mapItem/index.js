@@ -1,9 +1,14 @@
 import React from "react";
-import { MapItemContainer, MapItemImage, MapItemBody } from "./style";
+import {
+  MapItemContainer,
+  MapItemImage,
+  MapItemBody,
+  MapItemAnimation,
+} from "./style";
 import Text from "../../atoms/text";
 import Image from "../../atoms/image";
 
-const MapItem = ({ id, label, imageCode }) => {
+const MapItem = ({ id, name, song, imageCode }) => {
   return (
     <MapItemContainer id={`marker${id}`} onClick={() => alert(id)}>
       <MapItemImage>
@@ -11,13 +16,23 @@ const MapItem = ({ id, label, imageCode }) => {
       </MapItemImage>
       <MapItemBody>
         <Text
-          label={label}
-          height="25px"
-          lineHeight="25px"
+          label={name}
+          height="20px"
+          lineHeight="20px"
           fontSize="0.8rem"
           color="textPrimary"
         />
+        <Text
+          label={song}
+          height="20px"
+          lineHeight="20px"
+          fontSize="0.8rem"
+          color="textSecondary"
+        />
       </MapItemBody>
+      <MapItemAnimation>
+        <Image imageName="playing" type="gif" size="cover" />
+      </MapItemAnimation>
     </MapItemContainer>
   );
 };
