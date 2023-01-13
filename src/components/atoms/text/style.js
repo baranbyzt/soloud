@@ -37,6 +37,8 @@ const TextContainer = styled.div`
       ? "18px"
       : props.size === "lg"
       ? "24px"
+      : props.size === "xl"
+      ? "60px"
       : null};
 `;
 

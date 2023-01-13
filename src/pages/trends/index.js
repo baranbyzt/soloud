@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
 import PageLayout from "../../components/templates/pageLayout";
 import Grid from "../../components/atoms/grid";
 import Text from "../../components/atoms/text";
 import MediaItem from "../../components/organisms/mediaItem";
+import PieChart from "../../components/organisms/pieChart";
 import { useStore } from "../../contexts/StoreContext";
+
+const sampleData = [
+  { name: "Pop", y: 130, color: "#AB57CF", image: "genre01" },
+  { name: "HipHop", y: 104, color: "#4C96EB", image: "genre02" },
+  { name: "Rock", y: 98, color: "#86E364", image: "genre03" },
+  { name: "Latin", y: 78, color: "#FFC64A", image: "genre04" },
+  { name: "Dance", y: 86, color: "#F26F7A", image: "genre05" },
+];
 
 const options = {
   chart: {
     type: "pie",
     width: null,
-    height: 700,
+    height: 600,
     backgroundColor: "transparent",
   },
   title: {
@@ -36,18 +43,15 @@ const options = {
   credits: {
     enabled: false,
   },
+  legend: {
+    enabled: false,
+  },
   series: [
     {
       name: "Genre",
-      data: [
-        ["Pop", 130],
-        ["HipHop", 104],
-        ["Rock", 98],
-        ["Latin", 78],
-        ["Dance", 86],
-      ],
+      data: sampleData,
       size: "90%",
-      innerSize: "70%",
+      innerSize: "80%",
       showInLegend: true,
       dataLabels: {
         enabled: false,
@@ -83,7 +87,7 @@ const Trends = () => {
       <Grid direction="row" padding="30px" wrap>
         <Grid sm={24} md={12} lg={12}>
           <Text label="Distribution" color="textPrimary" size="lg" />
-          <HighchartsReact highcharts={Highcharts} options={options} />
+          <PieChart options={options} data={sampleData} />
         </Grid>
         <Grid sm={24} md={12} lg={12}>
           <Text label="Top 10" color="textPrimary" size="lg" />

@@ -19,12 +19,6 @@ const menuData = [
     path: "/dashboard",
   },
   {
-    id: "favorites",
-    label: "Favorites",
-    icon: "AiOutlineHeart",
-    path: "/favorites",
-  },
-  {
     id: "trends",
     label: "Trends",
     icon: "AiOutlinePieChart",
@@ -35,6 +29,12 @@ const menuData = [
     label: "Music Map",
     icon: "FiMapPin",
     path: "/music-map",
+  },
+  {
+    id: "favorites",
+    label: "Favorites",
+    icon: "AiOutlineHeart",
+    path: "/favorites",
   },
 ];
 

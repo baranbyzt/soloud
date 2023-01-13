@@ -17,6 +17,8 @@ const GridContainer = styled.div`
       ? "space-between"
       : props.spaceEvenly
       ? "space-evenly"
+      : props.center
+      ? "center"
       : "unset"};
   overflow: hidden;
   @media only screen and (min-width: 760px) {

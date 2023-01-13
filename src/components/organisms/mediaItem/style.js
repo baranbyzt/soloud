@@ -2,17 +2,14 @@ import styled from "styled-components";
 
 const MediaItemContainer = styled.div`
   position: relative;
-  box-shadow: inset 0px 0px 1px 1px var(--colorTertiary);
   width: 100%;
-  height: 70px;
-  margin: 10px 0;
-  transition: 0.5s;
-  border-radius: 10px;
+  height: 75px;
+  border-bottom: 1px solid var(--colorTertiary);
 `;
 
 const MediaItemImage = styled.div`
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 10px;
   height: 50px;
   width: 50px;
@@ -20,21 +17,21 @@ const MediaItemImage = styled.div`
 
 const MediaItemTitle = styled.div`
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 70px;
   height: 30px;
 `;
 
 const MediaItemSubTitle = styled.div`
   position: absolute;
-  top: 40px;
+  top: 42px;
   left: 70px;
   height: 20px;
 `;
 
 const MediaItemCounts = styled.div`
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 120px;
   height: 50px;
   display: flex;
@@ -43,7 +40,7 @@ const MediaItemCounts = styled.div`
 
 const MediaItemButtons = styled.div`
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 20px;
   width: 70px;
   height: 50px;
