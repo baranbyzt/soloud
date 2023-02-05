@@ -7,9 +7,8 @@ const Menu = ({ data, activeMenu, setActiveMenu }) => {
   return (
     <MenuContainer>
       {data.map((item, index) => (
-        <Link to={item.path} style={{ textDecoration: "none" }}>
+        <Link to={item.path} style={{ textDecoration: "none" }} key={index}>
           <MenuItem
-            key={index}
             id={item.id}
             label={item.label}
             icon={item.icon}

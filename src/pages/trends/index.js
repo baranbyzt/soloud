@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import PageLayout from "../../components/templates/pageLayout";
-import Grid from "../../components/atoms/grid";
+import Row from "../../components/atoms/row";
+import Column from "../../components/atoms/column";
 import Text from "../../components/atoms/text";
 import MediaItem from "../../components/organisms/mediaItem";
 import PieChart from "../../components/organisms/pieChart";
 import { useStore } from "../../contexts/StoreContext";
 
 const sampleData = [
-  { name: "Pop", y: 130, color: "#AB57CF", image: "genre01" },
-  { name: "HipHop", y: 104, color: "#4C96EB", image: "genre02" },
-  { name: "Rock", y: 98, color: "#86E364", image: "genre03" },
-  { name: "Latin", y: 78, color: "#FFC64A", image: "genre04" },
-  { name: "Dance", y: 86, color: "#F26F7A", image: "genre05" },
+  { name: "Pop", y: 130, color: "#AB57CF", image: "genre-pop" },
+  { name: "HipHop", y: 104, color: "#4C96EB", image: "genre-hiphop" },
+  { name: "Rock", y: 98, color: "#86E364", image: "genre-rock" },
+  { name: "Latin", y: 78, color: "#FFC64A", image: "genre-latin" },
+  { name: "Dance", y: 86, color: "#F26F7A", image: "genre-dance" },
 ];
 
 const options = {
   chart: {
     type: "pie",
     width: null,
-    height: 600,
+    height: null,
     backgroundColor: "transparent",
   },
   title: {
@@ -84,15 +85,24 @@ const Trends = () => {
 
   return (
     <PageLayout>
-      <Grid direction="row" padding="30px" wrap>
-        <Grid sm={24} md={12} lg={12}>
+      <Row padding="30px" wrap="true">
+        <Column
+          xs={24}
+          sm={24}
+          md={12}
+          lg={12}
+          direction="column"
+          justify="center"
+          align="center"
+        >
           <Text label="Distribution" color="textPrimary" size="lg" />
           <PieChart options={options} data={sampleData} />
-        </Grid>
-        <Grid sm={24} md={12} lg={12}>
+        </Column>
+        <Column xs={24} sm={24} md={12} lg={12} direction="column">
           <Text label="Top 10" color="textPrimary" size="lg" />
-          {mediaData.map((item) => (
+          {mediaData.map((item, index) => (
             <MediaItem
+              key={index}
               id={item.id}
               favorite={store.favorites.includes(item.id)}
               song={item.song}
@@ -100,8 +110,8 @@ const Trends = () => {
               playCount={item.playCount}
             />
           ))}
-        </Grid>
-      </Grid>
+        </Column>
+      </Row>
     </PageLayout>
   );
 };

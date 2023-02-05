@@ -3,7 +3,8 @@ import PageLayout from "../../components/templates/pageLayout";
 import Video from "../../components/atoms/video";
 import Text from "../../components/atoms/text";
 import Space from "../../components/atoms/space";
-import Grid from "../../components/atoms/grid";
+import Row from "../../components/atoms/row";
+import Column from "../../components/atoms/column";
 import { useLocation } from "react-router-dom";
 
 const Detail = () => {
@@ -26,20 +27,17 @@ const Detail = () => {
 
   return (
     <PageLayout>
-      <Grid padding="30px">
-        <Grid direction="row">
-          <Grid>
-            <Text label={detailData?.artist} size="lg" color="textPrimary" />
-            <Text label={detailData?.song} height={20} color="textSecondary" />
-          </Grid>
-        </Grid>
-        <Space height="30px" />
-        <Grid direction="row">
-          <Grid>
-            <Video id={detailData?.mediaId} />
-          </Grid>
-        </Grid>
-      </Grid>
+      <Row padding="30px 30px 0 30px">
+        <Column xs={24} sm={24} md={24} lg={24} direction="column">
+          <Text label={detailData?.artist} size="lg" color="textPrimary" />
+          <Text label={detailData?.song} height={20} color="textSecondary" />
+        </Column>
+      </Row>
+      <Row padding="30px">
+        <Column xs={24} sm={24} md={24} lg={24}>
+          <Video id={detailData?.mediaId} />
+        </Column>
+      </Row>
     </PageLayout>
   );
 };

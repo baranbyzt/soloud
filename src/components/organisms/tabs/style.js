@@ -1,19 +1,32 @@
 import styled from "styled-components";
 
 const TabsContainer = styled.div`
+  width: 300px;
   position: relative;
-  height: 33px;
+  height: 50px;
+  @media only screen and (min-width: 760px) {
+    height: 33px;
+  }
 `;
 
 const TabsButtonsLayer = styled.div`
-  width: fit-content;
-  height: 30px;
+  width: 300px;
+  height: 50px;
   display: flex;
+  justify-content: space-between;
+  @media only screen and (min-width: 760px) {
+    width: fit-content;
+    height: 30px;
+  }
 `;
 
 const TabsAnimationLayer = styled.div`
   width: auto;
   height: 3px;
+  display: none;
+  @media only screen and (min-width: 760px) {
+    display: block;
+  }
 `;
 
 const TabsAnimationSelection = styled.div`

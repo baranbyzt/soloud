@@ -1,18 +1,27 @@
 import React from "react";
-import { TabButtonContainer } from "./style";
+import { TabButtonContainer, TabButtonIcon, TabButtonText } from "./style";
 
 import Text from "../../atoms/text";
-import Icon from "../../atoms/icon";
+import Image from "../../atoms/image";
 
-const TabButton = ({ label, icon, isActive, onClick }) => {
+const TabButton = ({ label, image, isActive, onClick }) => {
   return (
     <TabButtonContainer isActive={isActive} onClick={onClick}>
-      {icon && <Icon data={icon} size="sm" />}
-      <Text
-        label={label}
-        color={isActive ? "textPrimary" : "textSecondary"}
-        size="sm"
-      />
+      <TabButtonIcon>
+        <Image
+          imageName={image}
+          type="png"
+          size="cover"
+          opacity={isActive ? "1" : 0.2}
+        />
+      </TabButtonIcon>
+      <TabButtonText>
+        <Text
+          label={label}
+          color={isActive ? "textPrimary" : "textSecondary"}
+          size="sm"
+        />
+      </TabButtonText>
     </TabButtonContainer>
   );
 };

@@ -53,8 +53,9 @@ const MusicMap = () => {
   return (
     <PageLayout>
       <Map center={fromLonLat([14.03, 47.01])} zoom={6} data={mapItems}></Map>
-      {mapItems.map((item) => (
+      {mapItems.map((item, index) => (
         <MapItem
+          key={index}
           id={item.id}
           name={item.name}
           song={item.song}

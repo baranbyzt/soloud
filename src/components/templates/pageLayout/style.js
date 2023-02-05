@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const PageLayoutContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 50px);
   background-color: var(--colorSecondary);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -18,6 +18,10 @@ const PageLayoutContainer = styled.div`
     border-radius: 2px;
     width: 4px;
     background-color: var(--activePrimary);
+  }
+
+  @media only screen and (min-width: 760px) {
+    height: 100vh;
   }
 `;
 

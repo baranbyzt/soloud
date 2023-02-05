@@ -40,8 +40,9 @@ const Recent = () => {
       {recentData
         .slice(0)
         .reverse()
-        .map((item) => (
+        .map((item, index) => (
           <RecentItem
+            key={index}
             data={item}
             id={item.id}
             song={item.song}

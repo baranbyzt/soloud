@@ -8,7 +8,7 @@ import {
   PieChartSticker,
   PieChartGraph,
 } from "./style";
-import Grid from "../../atoms/grid";
+import Row from "../../atoms/row";
 import Text from "../../atoms/text";
 import StickerBox from "../../molecules/stickerBox";
 
@@ -20,6 +20,7 @@ const PieChart = ({ options, data }) => {
           <Text label="Total Songs Played" color="textSecondary" size="md" />
           <Text label="496" color="textPrimary" size="xl" />
         </PieChartSticker>
+
         <PieChartGraph>
           <HighchartsReact
             highcharts={Highcharts}
@@ -29,16 +30,17 @@ const PieChart = ({ options, data }) => {
         </PieChartGraph>
       </PieChartBody>
       <PieChartLegend>
-        <Grid direction="row" center>
-          {data.map((item) => (
+        <Row direction="row" justify="center" align="center">
+          {data.map((item, index) => (
             <StickerBox
+              key={index}
               label={item.name}
               image={item.image}
               value={item.y}
               color={item.color}
             />
           ))}
-        </Grid>
+        </Row>
       </PieChartLegend>
     </PieChartContainer>
   );

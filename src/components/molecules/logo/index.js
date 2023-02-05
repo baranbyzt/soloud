@@ -2,12 +2,12 @@ import React from "react";
 import { LogoContainer } from "./style";
 import Image from "../../atoms/image";
 
-const Logo = ({ size }) => {
+const Logo = () => {
   return (
-    <LogoContainer size={size}>
+    <LogoContainer>
       <Image
-        width="100px"
-        height="100px"
+        width={{ xs: "50px", sm: "100px", md: "100px", lg: "100px" }}
+        height={{ xs: "50px", sm: "100px", md: "100px", lg: "100px" }}
         type="png"
         imageName="logo"
         size="cover"

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Menu from "../../components/organisms/menu";
-import Recent from "../../components/organisms/recent";
 
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../dashboard";
@@ -8,8 +6,11 @@ import Detail from "../detail";
 import Favorites from "../favorites";
 import Trends from "../trends";
 import MusicMap from "../music-map";
-import Logo from "../../components/molecules/logo";
-import Grid from "../../components/atoms/grid";
+import Row from "../../components/atoms/row";
+import Column from "../../components/atoms/column";
+import TopBar from "../../components/organisms/topbar";
+import SideBar from "../../components/organisms/sidebar";
+import { useEffect } from "react";
 
 const menuData = [
   {
@@ -40,20 +41,48 @@ const menuData = [
 
 const Home = () => {
   const [activeMenu, setActiveMenu] = useState(menuData[0].id);
+  const [sideBarVisibility, setSideBarVisibility] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleResize = () => {
+    if (window.innerWidth < 760) {
+      setSideBarVisibility(false);
+    } else {
+      setSideBarVisibility(true);
+    }
+  };
   return (
-    <>
-      <Grid direction="row">
-        <Grid width="240px">
-          <Logo size="md" />
-          <Menu
-            data={menuData}
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
+    <div style={{ overflow: "hidden" }}>
+      <Row>
+        <Column xs={24}>
+          <TopBar
+            sideBarVisibility={sideBarVisibility}
+            setSideBarVisibility={() =>
+              setSideBarVisibility(!sideBarVisibility)
+            }
           />
-          <Recent />
-        </Grid>
-        <Grid>
+        </Column>
+      </Row>
+
+      <Row>
+        {sideBarVisibility && (
+          <Column
+            minWidth={{ xs: "240px", sm: "240px", md: "240px", lg: "240px" }}
+            direction="column"
+          >
+            <SideBar
+              data={menuData}
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+            />
+          </Column>
+        )}
+
+        <Column width={{ xs: "100%", sm: "100%", md: "100%", lg: "100%" }}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -62,9 +91,9 @@ const Home = () => {
             <Route path="/trends" element={<Trends />} />
             <Route path="/music-map" element={<MusicMap />} />
           </Routes>
-        </Grid>
-      </Grid>
-    </>
+        </Column>
+      </Row>
+    </div>
   );
 };
 

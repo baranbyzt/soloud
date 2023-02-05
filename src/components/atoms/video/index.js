@@ -6,8 +6,8 @@ const Video = ({ id }) => {
     <VideoContainer>
       <iframe
         title={id}
-        frameborder="0"
-        allowfullscreen
+        frameBorder="0"
+        allowFullScreen
         width="100%"
         height="100%"
         src={`https://www.youtube.com/embed/${id}?`}

@@ -16,7 +16,7 @@ const Tabs = ({ data, activeTab, setActiveTab }) => {
             key={index}
             id={item.id}
             label={item.label}
-            icon={item.icon}
+            image={item.image}
             isActive={activeTab === item.id}
             onClick={() => setActiveTab(item.id)}
           />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageLayout from "../../components/templates/pageLayout";
-import Grid from "../../components/atoms/grid";
+import Row from "../../components/atoms/row";
+import Column from "../../components/atoms/column";
 import { useStore } from "../../contexts/StoreContext";
 import MediaBox from "../../components/organisms/mediaBox";
 import Text from "../../components/atoms/text";
@@ -33,22 +34,23 @@ const Favorites = () => {
 
   return (
     <PageLayout>
-      <Grid direction="row" padding="30px" wrap>
-        <Grid sm={24} md={24} lg={24}>
+      <Row padding="30px 30px 0 30px">
+        <Column xs={24} sm={24} md={24} lg={24}>
           <Text label="Favorites" color="textPrimary" size="lg" />
-        </Grid>
-        <Grid>
-          {favorites.length &&
-            favorites.map((item) => (
-              <MediaBox
-                id={item.id}
-                favorite={store.favorites.includes(item.id)}
-                song={item.song}
-                artist={item.artist}
-              />
-            ))}
-        </Grid>
-      </Grid>
+        </Column>
+      </Row>
+      <Row padding="0 30px" wrap="true">
+        {favorites.length &&
+          favorites.map((item, index) => (
+            <MediaBox
+              key={index}
+              id={item.id}
+              favorite={store.favorites.includes(item.id)}
+              song={item.song}
+              artist={item.artist}
+            />
+          ))}
+      </Row>
     </PageLayout>
   );
 };
