@@ -41,7 +41,7 @@ const menuData = [
 
 const Home = () => {
   const [activeMenu, setActiveMenu] = useState(menuData[0].id);
-  const [sideBarVisibility, setSideBarVisibility] = useState(false);
+  const [sideBarVisibility, setSideBarVisibility] = useState(true);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
